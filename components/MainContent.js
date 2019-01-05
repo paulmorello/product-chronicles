@@ -12,9 +12,8 @@ import ContentCard from '../components/ContentCard';
 // Styles
 const styles = StyleSheet.create({
   list: {
-    paddingTop: 20,
-    paddingBottom: 20,
-    backgroundColor: '#F3F3F3'
+    paddingTop: 10,
+    paddingBottom: 10,
   },
 });
 
@@ -32,11 +31,12 @@ class MainContent extends Component {
   }
 
   render() {
+    const listContent = this.state.content.reverse()
 
     return [
       <FlatList
         key="flatlist"
-        data={this.state.content}
+        data={listContent}
         style={styles.list}
         keyExtractor={ item => item.id }
         renderItem={ ({item}) => (

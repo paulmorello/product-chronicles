@@ -12,22 +12,33 @@ import { WebBrowser } from 'expo';
 // Styles
 const styles = StyleSheet.create({
   cardContainer: {
-
+    backgroundColor: "white",
+    borderBottomColor: 'rgba(96,100,109, 0.1)',
+    borderBottomWidth: 1,
+    borderTopColor: 'rgba(96,100,109, 0.1)',
+    borderTopWidth: 1,
+    paddingTop: 15,
+    paddingBottom: 15,
   },
   cardTextHeader: {
-    fontSize: 20,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
-    fontWeight: "900",
-  },
-  cardTextDescription: {
-    marginHorizontal: 30,
-    marginTop: 20,
-    marginBottom: 10,
-    fontWeight: "600",
     fontSize: 15,
     color: 'rgba(96,100,109, 1)',
+    lineHeight: 20,
+    textAlign: 'left',
+    fontWeight: "700",
+    marginHorizontal: 30,
+    paddingBottom: 10,
+  },
+  cardTextDescription: {
+    fontWeight: "500",
+    fontSize: 15,
+    color: 'rgba(96,100,109, 0.5)',
+    textAlign: 'left',
+    marginHorizontal: 30,
+    paddingBottom: 10,
+  },
+  cardTextReadMore: {
+    color: 'rgba(126,194,255, 1)',
   }
 });
 
@@ -38,13 +49,14 @@ class ContentCard extends Component {
   };
 
   render() {
+    const description = this.props.description.substring(0,100)
 
     return (
       <TouchableOpacity
         style={ styles.cardContainer }
         onPress={this.handleLearnMorePress}>
         <Text style={ styles.cardTextHeader }> {this.props.title} </Text>
-        <Text style={ styles.cardTextDescription }> {this.props.description} </Text>
+        <Text style={ styles.cardTextDescription }> {description}... <Text style={styles.cardTextReadMore}>Read More</Text> </Text>
       </TouchableOpacity>
     )
 
