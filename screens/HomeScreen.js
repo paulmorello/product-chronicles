@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  FlatList,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
@@ -14,22 +15,42 @@ import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: "Product Chronicles",
+    headerStyle: {
+      backgroundColor: "white",
+    },
+    headerTintColor: 'rgba(96,100,109, 1)',
   };
 
   render() {
+
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
+
+        <ScrollView
+          style={styles.container} contentContainerStyle={styles.contentContainer}>
+
+          <View style={styles.updatedDate}>
+            <Text style={styles.updatedDateText}>Last Updated on {new Date().toDateString()}</Text>
+          </View>
+
+          <View style={styles.feedHeader}>
+            <Text style={styles.feedHeaderText}>Latest Product Reads</Text>
+          </View>
+
+          <View style={styles.feedContainer}>
+            <FlatList
+              key="flatlist"
+              renderItem={ ({item}) => (
+                <Text
+                  style={styles.feedContainerText}
+                  onPress={this._handleLearnMorePress}>Goals for 2019 – A Product Manager’s New Year’s Resolutions</Text>
+                )}
             />
+
+            <Text
+              style={styles.feedContainerText}
+              onPress={this._handleLearnMorePress}>Goals for 2019 – A Product Manager’s New Year’s Resolutions</Text>
           </View>
 
           <View style={styles.getStartedContainer}>
@@ -68,27 +89,24 @@ export default class HomeScreen extends React.Component {
     if (__DEV__) {
       const learnMoreButton = (
         <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
+          Read more
         </Text>
       );
 
       return (
         <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use useful development
-          tools. {learnMoreButton}
         </Text>
       );
     } else {
       return (
         <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
         </Text>
       );
     }
   }
 
   _handleLearnMorePress = () => {
-    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
+    WebBrowser.openBrowserAsync('https://www.mindtheproduct.com/2019/01/goals-for-2019-a-product-managers-new-years-resolutions');
   };
 
   _handleHelpPress = () => {
@@ -111,19 +129,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
-  },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
+    paddingTop: 0,
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -184,5 +190,50 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+
+  // New Styles
+  updatedDate: {
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderBottomColor: 'rgba(96,100,109, 1)',
+    borderBottomWidth: 0.3,
+    borderTopColor: 'rgba(96,100,109, 1)',
+    borderTopWidth: 0.3,
+  },
+  updatedDateText: {
+    color: 'rgba(0,0,0,0.5)',
+  },
+
+  feedHeader: {
+    alignItems: 'flex-start',
+    paddingTop: 30,
+    paddingBottom: 10,
+    borderBottomColor: 'rgba(96,100,109, 1)',
+    borderBottomWidth: 3,
+    marginBottom: 10,
+    marginHorizontal: 30,
+  },
+  feedHeaderText: {
+    fontSize: 20,
+    color: 'rgba(96,100,109, 1)',
+    lineHeight: 24,
+    textAlign: 'center',
+    fontWeight: "900",
+  },
+
+  feedContainer: {
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 20,
+  },
+  feedContainerText: {
+    marginHorizontal: 30,
+    marginTop: 20,
+    marginBottom: 10,
+    fontWeight: "600",
+    fontSize: 15,
+    color: 'rgba(96,100,109, 1)',
   },
 });
