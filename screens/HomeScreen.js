@@ -17,7 +17,7 @@ import MainContent from '../components/MainContent';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: "Product Chronicles",
+    title: "The Product Chronicles",
     headerStyle: {
       backgroundColor: "white",
     },
@@ -44,54 +44,22 @@ export default class HomeScreen extends React.Component {
             <MainContent />
           </View>
 
-          <View style={styles.feedContainer}>
-            <Text
-              style={styles.feedContainerText}
-              onPress={this._handleLearnMorePress}>Goals for 2019 – A Product Manager’s New Year’s Resolutions</Text>
-          </View>
-
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
-            </View>
-
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
           </View>
 
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
         </ScrollView>
-
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
       </View>
     );
   }
 
   _maybeRenderDevelopmentModeWarning() {
     if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Read more
-        </Text>
-      );
 
       return (
         <Text style={styles.developmentModeText}>
+          You're in Dev mode
         </Text>
       );
     } else {
@@ -102,15 +70,7 @@ export default class HomeScreen extends React.Component {
     }
   }
 
-  _handleLearnMorePress = () => {
-    WebBrowser.openBrowserAsync('https://www.mindtheproduct.com/2019/01/goals-for-2019-a-product-managers-new-years-resolutions');
-  };
 
-  _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    );
-  };
 }
 
 const styles = StyleSheet.create({

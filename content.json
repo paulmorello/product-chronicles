@@ -6,5 +6,29 @@
       "title": "Goals for 2019 – A Product Manager’s New Year’s Resolutions",
       "description": "It’s a new year, and while the date changing on a calendar doesn’t really have some magical power, it is a nice reminder to slow down, reflect, and resolve which goals to focus on for the year ahead."
     },
+    {
+      "id": "2",
+      "url": "https://segment.com/academy/intro/choosing-metrics-that-matter/",
+      "title": "Choosing Metrics That Matter",
+      "description": "Everyone loves their wall-mounted dashboards, but we rarely pick the right metrics to track. And tracking the wrong metrics is almost as bad as tracking nothing at all."
+    },
+    {
+      "id": "3",
+      "url": "https://medium.com/@noah_weiss/50-articles-and-books-that-will-make-you-a-great-product-manager-aad5babee2f7",
+      "title": "80 Articles and Books that will Make you a Great Product Manager",
+      "description": "Use these articles and Books to expand your skillset as Product Manager"
+    },
+    {
+      "id": "4",
+      "url": "https://www.atlassian.com/agile/scrum/backlogs",
+      "title": "The product backlog: your ultimate to-do list",
+      "description": "A healthy product backlog is much like a healthy human: groomed, organized, and living in the open."
+    },
+    {
+      "id": "5",
+      "url": "https://medium.com/speroventures/product-decoded-deb-liu-vp-product-facebook-edceaaf23352",
+      "title": "Product Decoded: Interview with Deb Liu, VP Product, Facebook",
+      "description": "Spero Ventures and Product Leader Summit launch the first season of Product Decoded. The podcast shares advice and best practices on how to build and scale great products from the world’s top product experts. This season, my Product Leader Summit co-organizers, Dan Olsen and Gib Biddle, and I speak with seasoned product leaders from Facebook, Medium, Netflix, UserTesting, Jet.com, Box and more."
+    },
   ]
 }
