@@ -11,7 +11,9 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
+// File Imports
 import { MonoText } from '../components/StyledText';
+import MainContent from '../components/MainContent';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -39,15 +41,10 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <View style={styles.feedContainer}>
-            <FlatList
-              key="flatlist"
-              renderItem={ ({item}) => (
-                <Text
-                  style={styles.feedContainerText}
-                  onPress={this._handleLearnMorePress}>Goals for 2019 – A Product Manager’s New Year’s Resolutions</Text>
-                )}
-            />
+            <MainContent />
+          </View>
 
+          <View style={styles.feedContainer}>
             <Text
               style={styles.feedContainerText}
               onPress={this._handleLearnMorePress}>Goals for 2019 – A Product Manager’s New Year’s Resolutions</Text>
