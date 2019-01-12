@@ -32,6 +32,7 @@ class MainContent extends Component {
   }
 
   filterByCategory = (category) => {
+    console.log(category);
     console.log(this.state.content.filter( content =>
       content.category === 'Analytics'));
   }
@@ -51,7 +52,7 @@ class MainContent extends Component {
             title={item.title}
             description={item.description}
             url={item.url}
-            categoryFilter={this.filterByCategory}
+            filterCategory={this.filterByCategory}
           />
         )}
       />

@@ -9,6 +9,9 @@ import {
 import PropTypes from 'prop-types';
 import { WebBrowser } from 'expo';
 
+// File Imports
+import Category from './Category';
+
 // Styles
 const styles = StyleSheet.create({
   cardContainer: {
@@ -19,15 +22,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     paddingTop: 15,
     paddingBottom: 15,
-  },
-  cardTextCategory: {
-    fontSize: 12,
-    color: 'rgba(63,130,232, 1)',
-    lineHeight: 20,
-    textAlign: 'left',
-    fontWeight: "800",
-    marginHorizontal: 30,
-    paddingBottom: 10,
   },
   cardTextHeader: {
     fontSize: 15,
@@ -64,10 +58,11 @@ class ContentCard extends Component {
       <TouchableOpacity
         style={ styles.cardContainer }
         onPress={this.handleLearnMorePress}>
-        <TouchableOpacity
-          onPress={this.props.categoryFilter()}>
-          <Text style={ styles.cardTextCategory }>{this.props.category} </Text>
-        </TouchableOpacity>
+
+        <Category
+          category={this.props.category}
+          filterCategory={this.props.filterCategory}/>
+
         <Text style={ styles.cardTextHeader }>{this.props.title} </Text>
         <Text style={ styles.cardTextDescription }>{description}... <Text style={styles.cardTextReadMore}>Read More</Text> </Text>
       </TouchableOpacity>
@@ -81,7 +76,7 @@ ContentCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string,
-  categoryFilter: PropTypes.func
+  filterCategory: PropTypes.func
 }
 
 
