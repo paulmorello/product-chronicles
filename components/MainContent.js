@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
 
 class MainContent extends Component {
   state = {
-    content: []
+    content: [],
+    categoryFilter: '',
   }
 
   componentDidMount() {
@@ -28,6 +29,11 @@ class MainContent extends Component {
 
     this.setState({ content })
 
+  }
+
+  filterByCategory = (category) => {
+    console.log(this.state.content.filter( content =>
+      content.category === 'Analytics'));
   }
 
   render() {
@@ -41,9 +47,11 @@ class MainContent extends Component {
         keyExtractor={ item => item.id }
         renderItem={ ({item}) => (
           <ContentCard
+            category={item.category}
             title={item.title}
             description={item.description}
             url={item.url}
+            categoryFilter={this.filterByCategory}
           />
         )}
       />

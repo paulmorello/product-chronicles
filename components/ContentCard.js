@@ -20,6 +20,15 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
   },
+  cardTextCategory: {
+    fontSize: 12,
+    color: 'rgba(63,130,232, 1)',
+    lineHeight: 20,
+    textAlign: 'left',
+    fontWeight: "800",
+    marginHorizontal: 30,
+    paddingBottom: 10,
+  },
   cardTextHeader: {
     fontSize: 15,
     color: 'rgba(96,100,109, 1)',
@@ -38,7 +47,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   cardTextReadMore: {
-    color: 'rgba(126,194,255, 1)',
+    color: 'rgba(63,130,232, 1)',
   }
 });
 
@@ -55,8 +64,12 @@ class ContentCard extends Component {
       <TouchableOpacity
         style={ styles.cardContainer }
         onPress={this.handleLearnMorePress}>
-        <Text style={ styles.cardTextHeader }> {this.props.title} </Text>
-        <Text style={ styles.cardTextDescription }> {description}... <Text style={styles.cardTextReadMore}>Read More</Text> </Text>
+        <TouchableOpacity
+          onPress={this.props.categoryFilter()}>
+          <Text style={ styles.cardTextCategory }>{this.props.category} </Text>
+        </TouchableOpacity>
+        <Text style={ styles.cardTextHeader }>{this.props.title} </Text>
+        <Text style={ styles.cardTextDescription }>{description}... <Text style={styles.cardTextReadMore}>Read More</Text> </Text>
       </TouchableOpacity>
     )
 
@@ -64,9 +77,11 @@ class ContentCard extends Component {
 }
 
 ContentCard.propTypes = {
+  category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  url: PropTypes.string
+  url: PropTypes.string,
+  categoryFilter: PropTypes.func
 }
 
 

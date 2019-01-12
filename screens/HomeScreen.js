@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     paddingTop: 30,
     paddingBottom: 10,
-    borderBottomColor: 'rgba(96,100,109, 1)',
+    borderBottomColor: 'rgba(63,130,232, 1)',
     borderBottomWidth: 3,
     marginBottom: 10,
     marginHorizontal: 30,

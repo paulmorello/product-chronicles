@@ -3,44 +3,72 @@
     {
       "id": "1",
       "url": "https://www.mindtheproduct.com/2019/01/goals-for-2019-a-product-managers-new-years-resolutions",
+      "category": "Product Management",
       "title": "Goals for 2019 – A Product Manager’s New Year’s Resolutions",
       "description": "It’s a new year, and while the date changing on a calendar doesn’t really have some magical power, it is a nice reminder to slow down, reflect, and resolve which goals to focus on for the year ahead."
     },
     {
       "id": "2",
       "url": "https://segment.com/academy/intro/choosing-metrics-that-matter/",
+      "category": "Analytics",
       "title": "Choosing Metrics That Matter",
       "description": "Everyone loves their wall-mounted dashboards, but we rarely pick the right metrics to track. And tracking the wrong metrics is almost as bad as tracking nothing at all."
     },
     {
       "id": "3",
       "url": "https://medium.com/@noah_weiss/50-articles-and-books-that-will-make-you-a-great-product-manager-aad5babee2f7",
+      "category": "Resources",
       "title": "80 Articles and Books that will Make you a Great Product Manager",
       "description": "Use these articles and Books to expand your skillset as Product Manager"
     },
     {
       "id": "4",
       "url": "https://www.atlassian.com/agile/scrum/backlogs",
+      "category": "Product Management",
       "title": "The product backlog: your ultimate to-do list",
       "description": "A healthy product backlog is much like a healthy human: groomed, organized, and living in the open."
     },
     {
       "id": "5",
       "url": "https://medium.com/speroventures/product-decoded-deb-liu-vp-product-facebook-edceaaf23352",
+      "category": "Podcast",
       "title": "Product Decoded: Interview with Deb Liu, VP Product, Facebook",
       "description": "Spero Ventures and Product Leader Summit launch the first season of Product Decoded. The podcast shares advice and best practices on how to build and scale great products from the world’s top product experts. This season, my Product Leader Summit co-organizers, Dan Olsen and Gib Biddle, and I speak with seasoned product leaders from Facebook, Medium, Netflix, UserTesting, Jet.com, Box and more."
     },
     {
       "id": "6",
       "url": "https://medium.dave-bailey.com/how-to-create-a-genius-go-to-market-strategy-89469ad9106d?fbclid=IwAR1ML38h1aJdZYhmpwYfN5oVMOKW7HjJvS2_pjgDkIi5TpOn_HJ5uHNcwTo",
+      "category": "Go-to-Market",
       "title": "The Secret Formula for Go-to-Market",
       "description": "According to Peter Thiel, “Poor distribution — not product — is the number one cause of failure.” Here’s a smart way to think about your distribution strategy."
     },
     {
       "id": "7",
       "url": "https://www.startupsecrets.com/mvs/?fbclid=IwAR3OpJNUyH1m2HP1k-rZ6MIX2-7gMGiH4QK8mWM-o47kL3GANJQJOh39cJE",
+      "category":"Go-to-Market",
       "title": "Demandware – Defining Minimum Viable Segment (MVS)",
       "description": "In this part of Go To Market, we discuss the importance of Segmentation and Targeting to accelerate your customer traction."
+    },
+    {
+      "id": "8",
+      "url": "https://medium.dave-bailey.com/the-smart-way-to-develop-new-product-ideas-2c5072048a0",
+      "category": "Entrepreneurship",
+      "title": "The Smart Way to Develop New Product Ideas",
+      "description": "So you have a new product idea . . . what should you do? Hire a designer, raise seed capital, learn to code? Here’s why you might be avoiding the most obvious answer."
+    },
+    {
+      "id": "9",
+      "url": "https://medium.com/s/user-friendly/emulation-is-not-a-product-strategy-cfecdbffce96",
+      "category": "Product Management",
+      "title": "Emulation Is Not a Product Strategy",
+      "description": "If something worked for one company, that doesn’t necessarily mean it will work for yours."
+    },
+    {
+      "id": "10",
+      "url": "https://productcoalition.com/the-art-of-the-strategic-product-roadmap-c881f261b4eb",
+      "category": "Product Strategy",
+      "title": "The Art of the Strategic Product Roadmap",
+      "description": "Strategy, visualized. Crafted by design, engineered to keep customers close."
     },
   ]
 }
