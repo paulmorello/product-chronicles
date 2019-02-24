@@ -21,11 +21,10 @@ const styles = StyleSheet.create({
   },
 })
 
-export default class Category extends React.Component {  
+export default class Category extends React.Component {
   render() {
     return (
-      <TouchableOpacity
-        onPress={this.props.filterCategory(this.props.category)}>
+      <TouchableOpacity>
         <Text style={ styles.cardTextCategory }>{this.props.category} </Text>
       </TouchableOpacity>
     );

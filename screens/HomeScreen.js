@@ -24,9 +24,19 @@ export default class HomeScreen extends React.Component {
     headerTintColor: 'black',
   };
 
+  state = {
+    content: []
+  }
 
+  componentDidMount() {
+
+    const content = require('../content.json').content
+
+    this.setState({ content })
+  }
 
   render() {
+    const listContent = this.state.content.reverse();
 
     return (
       <View style={styles.container}>
@@ -43,7 +53,8 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <View style={styles.feedContainer}>
-            <MainContent />
+            <MainContent
+              listContent={listContent}/>
           </View>
 
           <View style={styles.getStartedContainer}>

@@ -60,8 +60,7 @@ class ContentCard extends Component {
         onPress={this.handleLearnMorePress}>
 
         <Category
-          category={this.props.category}
-          filterCategory={this.props.filterCategory}/>
+          category={this.props.category} />
 
         <Text style={ styles.cardTextHeader }>{this.props.title} </Text>
         <Text style={ styles.cardTextDescription }>{description}... <Text style={styles.cardTextReadMore}>Read More</Text> </Text>
@@ -76,7 +75,6 @@ ContentCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string,
-  filterCategory: PropTypes.func
 }
 
 

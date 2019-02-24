@@ -5,6 +5,7 @@ import {
   View,
   FlatList
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 // File Imports
 import ContentCard from '../components/ContentCard';
@@ -18,32 +19,13 @@ const styles = StyleSheet.create({
 });
 
 class MainContent extends Component {
-  state = {
-    content: [],
-    categoryFilter: '',
-  }
-
-  componentDidMount() {
-
-    const content = require('../content.json').content
-
-    this.setState({ content })
-
-  }
-
-  filterByCategory = (category) => {
-    console.log(category, this.state.content);
-    console.log(this.state.content.filter( content =>
-      content.category === 'Analytics'));
-  }
 
   render() {
-    const listContent = this.state.content.reverse()
 
     return [
       <FlatList
         key="flatlist"
-        data={listContent}
+        data={this.props.listContent}
         style={styles.list}
         keyExtractor={ item => item.id }
         renderItem={ ({item}) => (
@@ -52,12 +34,15 @@ class MainContent extends Component {
             title={item.title}
             description={item.description}
             url={item.url}
-            filterCategory={this.filterByCategory}
           />
         )}
       />
     ]
   }
+}
+
+MainContent.propTypes = {
+  listContent: PropTypes.array.isRequired
 }
 
 export default MainContent;
