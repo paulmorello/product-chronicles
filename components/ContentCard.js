@@ -48,6 +48,10 @@ const styles = StyleSheet.create({
 
 class ContentCard extends Component {
 
+  handleLearnMorePress = () => {
+    WebBrowser.openBrowserAsync(this.props.url);
+  };
+
   render() {
     const description = this.props.description.substring(0,100)
     const uri = this.props.url
@@ -76,4 +80,4 @@ ContentCard.propTypes = {
 }
 
 
-export default ContentCard;
+export default ContentCard
