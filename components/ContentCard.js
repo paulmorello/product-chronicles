@@ -4,7 +4,8 @@ import {
   Text,
   View,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  Webview
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { WebBrowser } from 'expo';
@@ -47,12 +48,10 @@ const styles = StyleSheet.create({
 
 class ContentCard extends Component {
 
-  handleLearnMorePress = () => {
-    WebBrowser.openBrowserAsync(this.props.url);
-  };
-
   render() {
     const description = this.props.description.substring(0,100)
+    const uri = this.props.url
+    console.log(uri);
 
     return (
       <TouchableOpacity
@@ -65,8 +64,7 @@ class ContentCard extends Component {
         <Text style={ styles.cardTextHeader }>{this.props.title} </Text>
         <Text style={ styles.cardTextDescription }>{description}... <Text style={styles.cardTextReadMore}>Read More</Text> </Text>
       </TouchableOpacity>
-    )
-
+    );
   }
 }
 
