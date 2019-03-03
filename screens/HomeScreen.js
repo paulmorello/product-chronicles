@@ -41,7 +41,6 @@ export default class HomeScreen extends React.Component {
 
   render() {
     const listContent = this.state.content.reverse();
-    console.log(filterContent('Analytics'));
 
     return (
       <View style={styles.container}>

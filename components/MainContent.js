@@ -42,7 +42,7 @@ class MainContent extends Component {
 }
 
 MainContent.propTypes = {
-  listContent: PropTypes.array.isRequired
+  listContent: PropTypes.array.isRequired,
 }
 
 export default MainContent;

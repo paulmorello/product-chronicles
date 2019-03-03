@@ -55,7 +55,6 @@ class ContentCard extends Component {
   render() {
     const description = this.props.description.substring(0,100)
     const uri = this.props.url
-    console.log(uri);
 
     return (
       <TouchableOpacity
@@ -77,6 +76,7 @@ ContentCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string,
+  filterContent: PropTypes.func
 }
 
 
