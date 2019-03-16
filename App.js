@@ -10,13 +10,8 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    var config = { 
-      apiKey: "AIzaSyBNvDGNljJgfct8zdhAgL4jozEGnfJYky8",
-      authDomain: "product-chronicles.firebaseapp.com",
-      databaseURL: "https://product-chronicles.firebaseio.com",
-      projectId: "product-chronicles",
-      storageBucket: "product-chronicles.appspot.com",
-      messagingSenderId: "60979579292"
+    var config = {
+      
     };
 
     firebase.initializeApp(config);
