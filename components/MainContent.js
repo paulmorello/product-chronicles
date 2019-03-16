@@ -20,7 +20,24 @@ const styles = StyleSheet.create({
 
 class MainContent extends Component {
 
+  renderItem = ({ item: content }) => {
+    return (
+			<View
+				style={styles.list}
+				key={content.id}
+			>
+        <ContentCard
+          category={content.category}
+          title={content.title}
+          description={content.description}
+          url={content.url}
+        />
+			</View>
+		);
+  }
+
   render() {
+    console.log("RENDER MAIN CONTENT", this.props.listContent);
 
     return [
       <FlatList
@@ -28,14 +45,7 @@ class MainContent extends Component {
         data={this.props.listContent}
         style={styles.list}
         keyExtractor={ item => item.id }
-        renderItem={ ({item}) => (
-          <ContentCard
-            category={item.category}
-            title={item.title}
-            description={item.description}
-            url={item.url}
-          />
-        )}
+        renderItem={ this.renderItem }
       />
     ]
   }

@@ -8,8 +8,10 @@ import {
   TouchableOpacity,
   View,
   FlatList,
+  ActivityIndicator,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import firebase from 'firebase';
 
 // File Imports
 import { MonoText } from '../components/StyledText';
@@ -25,14 +27,21 @@ export default class HomeScreen extends React.Component {
   };
 
   state = {
-    content: []
+    content: [],
+    loading: true
   }
 
-  componentDidMount() {
+  async componentDidMount() {
 
-    const content = require('../content.json').content
+    const getContent = await firebase.database().ref('content/').once('value', function (snapshot) {
+      return snapshot.val();
+    });
 
-    this.setState({ content })
+    const response = await getContent;
+
+    const content = await response;
+
+    this.setState({ content, loading: false })
   }
 
   filterContent = (category) => {
@@ -40,11 +49,14 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const listContent = this.state.content.reverse();
+    const { content, loading } = this.state;
+    console.log("HOME SCREEN CONTENT", content);
 
     return (
       <View style={styles.container}>
-
+        {loading ? (
+          <ActivityIndicator size={1} color={"lightgrey"} />
+        ) : (
         <ScrollView
           style={styles.container} contentContainerStyle={styles.contentContainer}>
 
@@ -58,15 +70,14 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.feedContainer}>
             <MainContent
-              listContent={listContent}/>
+              listContent={content}/>
           </View>
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
-
           </View>
-
         </ScrollView>
+        )}
       </View>
     );
   }
