@@ -37,7 +37,6 @@ class MainContent extends Component {
   }
 
   render() {
-    console.log("RENDER MAIN CONTENT", this.props.listContent);
 
     return [
       <FlatList
