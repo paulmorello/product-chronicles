@@ -11,7 +11,6 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import firebase from 'firebase';
 
 // File Imports
 import { MonoText } from '../components/StyledText';
@@ -33,15 +32,15 @@ export default class HomeScreen extends React.Component {
 
   async componentDidMount() {
 
-    const getContent = await firebase.database().ref('content/').once('value', function (snapshot) {
-      return snapshot.val();
-    });
-
-    const response = await getContent;
-
-    const content = await response;
-
-    this.setState({ content, loading: false })
+    // const getContent = await firebase.database().ref('content/').once('value', function (snapshot) {
+    //   return snapshot.val();
+    // });
+    //
+    // const response = await getContent;
+    //
+    // const content = await response;
+    //
+    // this.setState({ content, loading: false })
   }
 
   filterContent = (category) => {
