@@ -26,11 +26,11 @@ export default class HomeScreen extends React.Component {
   };
 
   state = {
-    loading: true
+    loading: false
   }
 
   async componentDidMount() {
-
+    console.log(this.state.loading);
   }
 
   // filterContent = (category) => {
@@ -38,10 +38,13 @@ export default class HomeScreen extends React.Component {
   // }
 
   loadingChange = () => {
-    this.setState({ loading: false })
+    if (this.state.loading) {
+      this.setState({ loading: false })
+    }
   }
 
   render() {
+    console.log(loading);
     const { loading } = this.state;
 
     return (
@@ -63,7 +66,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.feedContainer}>
             <MainContent
               loading={loading}
-               loadingChange={this.loadingChange} />
+              loadingChange={this.loadingChange} />
           </View>
 
           <View style={styles.getStartedContainer}>

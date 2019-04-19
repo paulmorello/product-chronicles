@@ -26,17 +26,18 @@ class MainContent extends Component {
 
   componentDidMount() {
 
+    console.log("LOADING STATE 1", this.props.loading);
+
     const content = require('../content.json').content
 
     this.setState({ content })
 
     this.props.loadingChange
 
-
+    console.log("LOADING STATE 2", this.props.loading);
   }
 
   renderItem = ({ item: content }) => {
-    console.log("MAINCONTENT", this.props.listContent);
     return (
 			<View
 				style={styles.list}
@@ -53,12 +54,10 @@ class MainContent extends Component {
   }
 
   render() {
-    let listContent = this.props.listContent;
-
     return [
       <FlatList
         key="flatlist"
-        data={this.props.listContent}
+        data={this.state.content}
         style={styles.list}
         keyExtractor={ item => item.id }
         renderItem={ this.renderItem }
@@ -68,9 +67,8 @@ class MainContent extends Component {
 }
 
 MainContent.propTypes = {
-  listContent: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
-  loadingChange: PropTypes.bool.isRequired
+  loadingChange: PropTypes.func.isRequired
 }
 
 export default MainContent;
