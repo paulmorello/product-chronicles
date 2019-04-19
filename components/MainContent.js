@@ -20,7 +20,23 @@ const styles = StyleSheet.create({
 
 class MainContent extends Component {
 
+  state = {
+    content: []
+  }
+
+  componentDidMount() {
+
+    const content = require('../content.json').content
+
+    this.setState({ content })
+
+    this.props.loadingChange
+
+
+  }
+
   renderItem = ({ item: content }) => {
+    console.log("MAINCONTENT", this.props.listContent);
     return (
 			<View
 				style={styles.list}
@@ -37,6 +53,7 @@ class MainContent extends Component {
   }
 
   render() {
+    let listContent = this.props.listContent;
 
     return [
       <FlatList
@@ -52,6 +69,8 @@ class MainContent extends Component {
 
 MainContent.propTypes = {
   listContent: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+  loadingChange: PropTypes.bool.isRequired
 }
 
 export default MainContent;

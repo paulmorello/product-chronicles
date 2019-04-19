@@ -26,30 +26,23 @@ export default class HomeScreen extends React.Component {
   };
 
   state = {
-    content: [],
     loading: true
   }
 
   async componentDidMount() {
 
-    // const getContent = await firebase.database().ref('content/').once('value', function (snapshot) {
-    //   return snapshot.val();
-    // });
-    //
-    // const response = await getContent;
-    //
-    // const content = await response;
-    //
-    // this.setState({ content, loading: false })
   }
 
-  filterContent = (category) => {
-    this.state.content.filter( content => content.category === category)
+  // filterContent = (category) => {
+  //   this.state.content.filter( content => content.category === category)
+  // }
+
+  loadingChange = () => {
+    this.setState({ loading: false })
   }
 
   render() {
-    const { content, loading } = this.state;
-    console.log("HOME SCREEN CONTENT", content);
+    const { loading } = this.state;
 
     return (
       <View style={styles.container}>
@@ -69,7 +62,8 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.feedContainer}>
             <MainContent
-              listContent={content}/>
+              loading={loading}
+               loadingChange={this.loadingChange} />
           </View>
 
           <View style={styles.getStartedContainer}>
@@ -96,7 +90,6 @@ export default class HomeScreen extends React.Component {
       );
     }
   }
-
 
 }
 
