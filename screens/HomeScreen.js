@@ -29,8 +29,8 @@ export default class HomeScreen extends React.Component {
     loading: false
   }
 
-  async componentDidMount() {
-    console.log(this.state.loading);
+  componentDidMount() {
+    console.log("HOME SCREEN", this.state.loading);
   }
 
   // filterContent = (category) => {
@@ -40,6 +40,8 @@ export default class HomeScreen extends React.Component {
   loadingChange = () => {
     if (this.state.loading) {
       this.setState({ loading: false })
+    } else {
+      this.setState({ loading: true })
     }
   }
 

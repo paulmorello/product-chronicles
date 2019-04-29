@@ -26,7 +26,9 @@ class MainContent extends Component {
 
   componentDidMount() {
 
-    console.log("LOADING STATE 1", this.props.loading);
+    this.props.loadingChange
+
+    console.log("MAIN CONTENT LOADING STATE 1", this.props.loading);
 
     const content = require('../content.json').content
 
